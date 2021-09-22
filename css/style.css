@@ -37,6 +37,9 @@ nav.side_bar {
   flex-direction: column;
 }
 
+.side_bar .nav_top {
+}
+
 .side_bar .nav_bottom {
   margin-top: auto;
 }
@@ -46,15 +49,19 @@ nav.side_bar {
   height: 100%;
 }
 
+/*CONTROL BAR*/
+
 .control_bar_container {
   background: #282828;
   flex: 0 0 100px;
   max-height: 100px;
-  padding: 0 15px 15px;
+  padding: 10px 15px 25px;
   display: flex;
   align-items: center;
-  gap: 5%;
+  gap: 30px;
 }
+
+/*LEFT CONTAINER*/
 
 .current_song {
   flex: 1 1 150px;
@@ -67,7 +74,7 @@ nav.side_bar {
 }
 
 .current_song .song_and_author {
-  flex: 1 1 auto;
+  flex: 0 1 80px;
 }
 
 .current_song .song_and_author h3 {
@@ -86,62 +93,94 @@ nav.side_bar {
   font-size: 16px;
 }
 
+/*CENTER CONTAINER*/
+
 .player {
-  flex: 18 1 150px;
+  flex: 18 0 180px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .player .controls {
   align-self: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 300px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 10px;
-}
-
-.player .controls .play {
-  font-size: 30px;
 }
 
 .player .controls i {
   font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.player .controls .play {
+  height: 35px;
+  width: 35px;
+  display: flex;
+}
+
+.player .controls .play i {
+  font-size: 30px;
+  padding: 0;
+  margin: auto;
+}
+
+.player .controls .play:hover i {
+  font-size: 32px;
+}
+
+.player .slider-container {
+  gap: 10px;
 }
 
 .player .slider {
-  flex: 0 1 600px;
+  flex: 0 1 500px;
 }
+
+/*RIGHT CONTAINER*/
 
 .sound_controls {
   flex: 1 1 150px;
   display: flex;
-  gap: 10px;
 }
 
 .sound_controls i {
   font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .sound_controls .slider-container {
   flex: 1 0 50px;
 }
 
+.sound_controls .slider {
+  width: 100%;
+}
+
+/*UTILITY CLASSES*/
 .gray-text {
   color: #878787;
+}
+
+.gray-text:hover {
+  color: white;
 }
 
 .small-text {
   font-size: 14px;
 }
 
+/*Custom slider*/
+
 .slider-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
   cursor: pointer;
 }
 
