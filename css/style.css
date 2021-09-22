@@ -22,11 +22,6 @@ body {
   display: flex;
 }
 
-.control_bar_container {
-  background: #282828;
-  flex: 0 0 100px;
-}
-
 nav.side_bar {
   flex: 0 0 50px;
   height: 100%;
@@ -41,5 +36,26 @@ nav.side_bar {
 
 .main_container {
   flex: 1 1 auto;
+  height: 100%;
+}
+
+.control_bar_container {
+  background: #282828;
+  flex: 0 0 100px;
+  display: flex;
+}
+
+.current_song {
+  flex: 1 1 150px;
+  height: 100%;
+}
+
+.player {
+  flex: 10 1 150px;
+  height: 100%;
+}
+
+.sound_controls {
+  flex: 1 1 150px;
   height: 100%;
 }
