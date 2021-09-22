@@ -1,4 +1,28 @@
-/*------------ RESET ------------*/
+/*==========================================
+Table of contents:
+A. RESET
+B. TYPOGRAPHY
+    - Utility classes
+C. LAYOUT
+    1. TOP CONTAINER
+        a. SIDE-BAR
+            - Top - Main nav
+            - Center - Playlists
+            - Bottom - Profile
+        b. MAIN CONTAINER
+            - Top overlay
+            - Nav
+            - Page scroll
+    2. CONTROL BAR
+        a. Left container - Current song
+        b. Center container - Player
+        c. Right container - Sound controls
+D: UTILITY CLASSES
+    - Custom slider
+
+==========================================*/
+
+/*------------ A: RESET ------------*/
 
 *,
 *::before,
@@ -27,7 +51,44 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
-/*------------ LAYOUT ------------*/
+/*------------ B: TYPOGRAPHY ------------*/
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+h3,
+p {
+  font-size: 12px;
+}
+
+h4 {
+  font-size: 10px;
+}
+
+/*Utility classes*/
+
+.gray-text {
+  color: #878787;
+}
+
+.gray-text.hover:hover {
+  color: white;
+}
+
+.a-underline:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+/*------------ C: LAYOUT ------------*/
 
 body {
   background: #141922;
@@ -39,7 +100,7 @@ body {
   height: 100vh;
 }
 
-/* >> >> TOP-CONTAINER >> >> */
+/* >> >> 1. TOP-CONTAINER >> >> */
 
 .top-container {
   flex: 1 0 0;
@@ -48,7 +109,7 @@ body {
 }
 
 /*SIDE-BAR*/
-nav.side_bar {
+.side_bar {
   color: #878787;
   flex: 0 0 65px;
   height: 100%;
@@ -59,9 +120,18 @@ nav.side_bar {
   padding: 15px 0;
 }
 
+/*Top - Main nav*/
+
 .nav_top {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.nav_top a {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
@@ -69,38 +139,89 @@ nav.side_bar {
   width: 30px;
 }
 
+.nav_top h3 {
+  font-size: 12px;
+}
+
 .nav_top .logo_small {
   margin-bottom: 20px;
   width: 35px;
 }
 
-.main_icon_nav,
-.download_icon {
+.main_icon_nav img,
+.download_icon img {
   opacity: 0.7;
 }
 
 .main_icon_nav:hover,
-.download_icon:hover,
+.nav_center li:hover,
+.nav_bottom li:hover {
+  color: white;
+}
+
 .main_icon_nav.active {
+  color: white;
+}
+
+.main_icon_nav:hover img,
+.main_icon_nav.active img,
+.nav_bottom .download_icon:hover img {
   opacity: 1;
 }
+/*Center - Playlists*/
+
+.nav_center {
+  overflow: auto;
+}
+
+.nav_center h2 {
+  color: white;
+  margin: 10px 0;
+}
+
+.nav_center a {
+  padding: 10px 0;
+}
+
+.nav_center li:hover i {
+  background: white;
+}
+
+.create_playlist a,
+.nav_bottom a {
+  display: flex;
+  align-items: center;
+}
+
+.create_playlist a i {
+  padding: 5px;
+  background: #878787;
+  color: black;
+}
+
+/*Bottom - Profile*/
 
 .nav_bottom {
   margin-top: auto;
   text-align: center;
 }
 
-.download_icon {
+.download_icon img {
   width: 20px;
 }
 
-.profile_image {
+.profile_image img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #878787;
-  margin-top: 20px;
 }
+
+.profile_image {
+  padding-top: 20px;
+}
+
+/*MAIN CONTAINER*/
 
 .main_container {
   flex: 1 1 auto;
@@ -108,6 +229,7 @@ nav.side_bar {
   color: white;
 }
 
+/*top overlay*/
 .top_overlay {
   position: sticky;
   height: 90px;
@@ -116,13 +238,25 @@ nav.side_bar {
   background: #080a0ebd;
 }
 
+.upgrade_button {
+  min-width: 217px;
+}
+
+.upgrade_button:hover {
+  transform: scale(1.05, 1.05);
+}
+
+/*nav*/
+
 .main_container nav ul {
   text-align: center;
+  word-spacing: -10px;
 }
 
 .main_container nav li {
+  word-spacing: normal;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .main_container nav a {
@@ -131,27 +265,68 @@ nav.side_bar {
   padding: 10px 5px;
 }
 
+/*page scroll*/
+
 .page_scroll {
   height: 100%;
-  padding: 20px;
+  padding: 20px 20px 110px;
   overflow: auto;
 }
 
-.recently_played {
+.page_scroll > div {
   display: flex;
   flex-flow: row wrap;
   gap: 15px;
 }
 
+.section_heading {
+  margin: 40px 0 20px;
+  width: 100%;
+}
+
+.section_heading p {
+  margin-top: 5px;
+}
+
 .card {
   width: calc(100% / 2 - 8px);
+  text-align: center;
 }
 
 .card img {
   width: 100%;
 }
 
-/* >> >> CONTROL BAR >> >> */
+.card_image {
+  position: relative;
+}
+
+.card:hover .card_image::after {
+  content: "\f144";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 35px;
+  text-shadow: 0 0 10px #00000086;
+}
+
+.card.artist img {
+  border-radius: 50%;
+}
+
+.card_heading {
+  margin: 10px;
+}
+
+.card_heading h4 {
+  margin-top: 5px;
+}
+
+/* >> >> 2. CONTROL BAR >> >> */
 
 .control_bar_container {
   color: white;
@@ -164,7 +339,7 @@ nav.side_bar {
   gap: 30px;
 }
 
-/*LEFT CONTAINER - Current song*/
+/*Left container - Current song*/
 
 .current_song {
   flex: 1 1 150px;
@@ -194,9 +369,10 @@ nav.side_bar {
   flex-direction: column;
   gap: 5px;
   font-size: 16px;
+  cursor: pointer;
 }
 
-/*CENTER CONTAINER - Player*/
+/*Center container - Player*/
 
 .player {
   flex: 18 0 180px;
@@ -220,20 +396,13 @@ nav.side_bar {
   padding: 5px;
 }
 
-.controls .play {
-  height: 35px;
-  width: 35px;
-  display: flex;
-}
-
 .controls .play i {
   font-size: 30px;
   padding: 0;
-  margin: auto;
 }
 
 .controls .play:hover i {
-  font-size: 32px;
+  transform: scale(1.1, 1.1);
 }
 
 .player .slider-container {
@@ -244,7 +413,7 @@ nav.side_bar {
   flex: 0 1 500px;
 }
 
-/*RIGHT CONTAINER - Sound controls*/
+/*Right container - Sound controls*/
 
 .sound_controls {
   flex: 1 1 150px;
@@ -265,29 +434,7 @@ nav.side_bar {
   width: 100%;
 }
 
-/*------------- UTILITY CLASSES -------------*/
-
-.gray-text {
-  color: #878787;
-}
-
-.gray-text:hover {
-  color: white;
-}
-
-.a-underline:hover {
-  text-decoration: underline;
-}
-
-.small-text {
-  font-size: 14px;
-}
-
-.btn-transparent {
-  padding: 10px 15px;
-  border: 1px solid white;
-  border-radius: 20px;
-}
+/*------------- D: UTILITY CLASSES -------------*/
 
 .list-small-underline-accent li {
   position: relative;
@@ -302,6 +449,12 @@ nav.side_bar {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.btn-transparent {
+  padding: 10px 15px;
+  border: 1px solid white;
+  border-radius: 20px;
 }
 
 /*Custom slider*/
@@ -353,8 +506,75 @@ nav.side_bar {
             MEDIA QUERIES
 ====================================*/
 
-@media screen and (max-width: 560px) {
+/*XS*/
+
+@media screen and (max-width: 575px) {
+  .download_icon,
+  .side_bar li {
+    justify-content: center;
+  }
+
   .xs-hidden {
     display: none;
+  }
+}
+
+/*S*/
+
+@media screen and (min-width: 576px) {
+  .side_bar {
+    flex: 0 0 200px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav_top,
+  .nav_bottom {
+    width: 100%;
+  }
+
+  .nav_top li:first-child {
+    display: none;
+  }
+
+  .nav_top .logo {
+    width: 130px;
+    margin-bottom: 30px;
+  }
+
+  .download_icon {
+    padding: 20px 0;
+    border-bottom: 1px solid #878787;
+  }
+
+  .create_playlist a i,
+  .nav_bottom a img {
+    margin-right: 10px;
+  }
+}
+
+/*M*/
+@media screen and (min-width: 768px) {
+  .card {
+    width: calc(100% / 4 - 12px);
+  }
+
+  .like_folder_icons {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/*L*/
+
+@media screen and (min-width: 992px) {
+  .card {
+    width: calc(100% / 6 - 13px);
+  }
+
+  .main_container nav li {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

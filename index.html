@@ -68,11 +68,13 @@
           <!-- Playlists section-->
           <div class="nav_center xs-hidden">
             <h2>PLAYLIST</h2>
-            <div>
-              <i class="fas fa-plus"></i>
-              <h3>Crea Playlist</h3>
-            </div>
             <ul>
+              <li class="create_playlist">
+                <a href="#">
+                  <i class="fas fa-plus"></i>
+                  <h3>Crea Playlist</h3>
+                </a>
+              </li>
               <li>
                 <a href="#">
                   <h4>Nome Playlist</h4>
@@ -113,14 +115,15 @@
           <!-- Profile section -->
           <ul class="nav_bottom">
             <li>
-              <a href="#">
-                <img class="download_icon" src="img/download.svg" alt="" />
+              <a class="download_icon" href="#">
+                <img src="img/download.svg" alt="" />
+                <h6 class="xs-hidden">Installa app</h6>
               </a>
             </li>
             <li>
-              <a href="#">
-                <img class="profile_image" src="img/profile.svg" alt="" />
-                <span class="xs-hidden"><h2>John Doe</h2></span>
+              <a class="profile_image" href="#">
+                <img src="img/profile.svg" alt="" />
+                <h2 class="xs-hidden">John Doe</h2>
               </a>
             </li>
           </ul>
@@ -128,76 +131,138 @@
         <!-- Main container -->
         <div class="main_container">
           <div class="top_overlay">
-            <a href="#" class="btn-transparent"> EFFETTUA L'UPGRADE </a>
+            <a href="#" class="btn-transparent upgrade_button"
+              >EFFETTUA L'UPGRADE</a
+            >
           </div>
           <div class="page_scroll">
             <nav class="list-small-underline-accent">
               <ul>
                 <li>
                   <h2>
-                    <a class="gray-text active" href="#">IN EVIDENZA</a>
+                    <a class="gray-text hover active" href="#">IN EVIDENZA</a>
                   </h2>
                 </li>
                 <li>
                   <h2>
-                    <a class="gray-text" href="#">PODCAST</a>
+                    <a class="gray-text hover" href="#">PODCAST</a>
                   </h2>
                 </li>
                 <li>
                   <h2>
-                    <a class="gray-text" href="#">CLASSIFICHE</a>
+                    <a class="gray-text hover" href="#">CLASSIFICHE</a>
                   </h2>
                 </li>
                 <li>
                   <h2>
-                    <a class="gray-text" href="#">GENERI E MOOD</a>
+                    <a class="gray-text hover" href="#">GENERI E MOOD</a>
                   </h2>
                 </li>
                 <li>
                   <h2>
-                    <a class="gray-text" href="#">NUOVE USCITE</a>
+                    <a class="gray-text hover" href="#">NUOVE USCITE</a>
                   </h2>
                 </li>
                 <li>
                   <h2>
-                    <a class="gray-text" href="#">SCOPRI</a>
+                    <a class="gray-text hover" href="#">SCOPRI</a>
                   </h2>
                 </li>
               </ul>
             </nav>
             <div class="recently_played">
-              <h1>Recently played</h1>
+              <h1 class="section_heading">Recently played</h1>
               <div class="card album">
-                <img src="img/metal_lifting.jpg" alt="" />
-                <h2>Heavy Metal</h2>
-                <h4 class="gray-text">Subtitle</h4>
+                <div class="card_image">
+                  <img src="img/metal_lifting.jpg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>Heavy Metal</h2>
+                  <h4 class="gray-text">Subtitle</h4>
+                </div>
               </div>
               <div class="card album">
-                <img src="img/stranger.jpeg" alt="" />
-                <h2>
-                  Stranger Things, Vol. 1(a Netflix Original Series Soundtrack)
-                </h2>
-                <h4 class="gray-text">Kyle Dixon & Michael Stein</h4>
+                <div class="card_image">
+                  <img src="img/stranger.jpeg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>
+                    Stranger Things, Vol. 1 (a Netflix Original Series
+                    Soundtrack)
+                  </h2>
+                  <h4 class="gray-text">Kyle Dixon & Michael Stein</h4>
+                </div>
               </div>
               <div class="card album">
-                <img src="img/aquietplace.jpeg" alt="" />
-                <h2>A quiet place</h2>
-                <h4 class="gray-text">Subtitle</h4>
+                <div class="card_image">
+                  <img src="img/aquietplace.jpeg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>A quiet place</h2>
+                  <h4 class="gray-text">Subtitle</h4>
+                </div>
               </div>
               <div class="card album">
-                <img src="img/split.jpeg" alt="" />
-                <h2>Split</h2>
-                <h4 class="gray-text">Subtitle</h4>
+                <div class="card_image">
+                  <img src="img/split.jpeg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>Split</h2>
+                  <h4 class="gray-text">Subtitle</h4>
+                </div>
               </div>
               <div class="card album">
-                <img src="img/aquietplace.jpeg" alt="" />
-                <h2>A quiet place</h2>
-                <h4 class="gray-text">Subtitle</h4>
+                <div class="card_image">
+                  <img src="img/sinister.jpeg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>Sinister</h2>
+                  <h4 class="gray-text">Subtitle</h4>
+                </div>
               </div>
               <div class="card album">
-                <img src="img/split.jpeg" alt="" />
-                <h2>Split</h2>
-                <h4 class="gray-text">Subtitle</h4>
+                <div class="card_image">
+                  <img src="img/cure.jpeg" alt="" />
+                </div>
+                <div class="card_heading">
+                  <h2>A cure for wellness</h2>
+                  <h4 class="gray-text">Subtitle</h4>
+                </div>
+              </div>
+            </div>
+            <div class="created_for_you">
+              <h1 class="section_heading">Creato per John Doe</h1>
+              <div class="card album">
+                <div class="card_image">
+                  <img src="img/radar.jpeg" alt="" />
+                </div>
+                <h2 class="card_heading">Release Radar</h2>
+              </div>
+              <div class="card album">
+                <div class="card_image">
+                  <img src="img/mixdaily.jpeg" alt="" />
+                </div>
+                <h2 class="card_heading">Daily Mix 1</h2>
+              </div>
+            </div>
+            <div class="popular_artists">
+              <div class="section_heading">
+                <h1>Artisti più popolari</h1>
+                <p class="gray-text">
+                  Più ascolti, più accurati saranno i suggerimenti
+                </p>
+              </div>
+              <div class="card artist">
+                <div class="card_image">
+                  <img src="img/youg.jpeg" alt="" />
+                </div>
+                <h2 class="card_heading">Lana del Rey</h2>
+              </div>
+              <div class="card artist">
+                <div class="card_image">
+                  <img src="img/einaudi.jpeg" alt="" />
+                </div>
+                <h2 class="card_heading">Einaudi</h2>
               </div>
             </div>
           </div>
@@ -211,12 +276,12 @@
           <div class="song_and_author">
             <h3>Sinister</h3>
             <h6>
-              <a class="a-underline gray-text" href="#">Brano Nome</a>
+              <a class="a-underline gray-text hover" href="#">Brano Nome</a>
             </h6>
           </div>
           <div class="like_folder_icons">
-            <i class="far fa-heart gray-text"></i>
-            <i class="far fa-folder gray-text"></i>
+            <i class="far fa-heart gray-text hover"></i>
+            <i class="far fa-folder gray-text hover"></i>
           </div>
         </div>
         <!-- Player controls -->
