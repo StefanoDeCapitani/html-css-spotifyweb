@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --clr-accent: #adff2f;
+
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
 body {
   background: #141922;
 }
@@ -42,20 +49,134 @@ nav.side_bar {
 .control_bar_container {
   background: #282828;
   flex: 0 0 100px;
+  max-height: 100px;
+  padding: 0 15px 15px;
   display: flex;
+  align-items: center;
+  gap: 5%;
 }
 
 .current_song {
   flex: 1 1 150px;
-  height: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.current_song img {
+  height: 40px;
+}
+
+.current_song .song_and_author {
+  flex: 1 1 auto;
+}
+
+.current_song .song_and_author h3 {
+  font-size: 12px;
+}
+
+.current_song .song_and_author h6 {
+  font-size: 10px;
+}
+
+.current_song .like_folder_icons {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
 }
 
 .player {
-  flex: 10 1 150px;
-  height: 100%;
+  flex: 18 1 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.player .controls {
+  align-self: center;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.player .controls .play {
+  font-size: 30px;
+}
+
+.player .controls i {
+  font-size: 16px;
+}
+
+.player .slider {
+  flex: 0 1 600px;
 }
 
 .sound_controls {
   flex: 1 1 150px;
+  display: flex;
+  gap: 10px;
+}
+
+.sound_controls i {
+  font-size: 12px;
+}
+
+.sound_controls .slider-container {
+  flex: 1 0 50px;
+}
+
+.gray-text {
+  color: #878787;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.slider-container span {
+  flex: 0 0 auto;
   height: 100%;
+  font-size: 10px;
+}
+
+.slider-container .slider {
+  height: 4px;
+  background-color: #5a5a5a;
+  border-radius: 2px;
+}
+
+.slider-container .progress {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  border-radius: 2px;
+  background-color: #c1c1c1;
+}
+
+.slider-container:hover .progress {
+  background-color: var(--clr-accent);
+}
+
+.slider-container:hover .progress:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: white;
 }

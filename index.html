@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Fontawesome connection -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
     <!-- Montserrat Google Fonts connection -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -77,11 +84,45 @@
       <!-- Control bar -->
       <div class="control_bar_container">
         <!-- Current song -->
-        <div class="current_song"></div>
+        <div class="current_song">
+          <img src="img/sinister.jpeg" alt="Sinister cover" />
+          <div class="song_and_author">
+            <h3>Sinister</h3>
+            <h6 class="gray-text">Brano Nome</h6>
+          </div>
+          <div class="like_folder_icons gray-text">
+            <i class="far fa-heart"></i>
+            <i class="far fa-folder"></i>
+          </div>
+        </div>
         <!-- Player controls -->
-        <div class="player"></div>
+        <div class="player">
+          <div class="controls">
+            <i class="fas fa-random"></i>
+            <i class="fas fa-step-backward"></i>
+            <i class="far fa-play-circle play"></i>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-redo-alt"></i>
+          </div>
+          <div class="slider-container small-text">
+            <span>0:25</span>
+            <div class="slider">
+              <div class="progress"></div>
+            </div>
+            <span>4:35</span>
+          </div>
+        </div>
         <!-- Sound controls -->
-        <div class="sound_controls"></div>
+        <div class="sound_controls">
+          <i class="fas fa-list"></i>
+          <i class="fas fa-desktop"></i>
+          <i class="fas fa-volume-up"></i>
+          <div class="slider-container">
+            <div class="slider">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
