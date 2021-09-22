@@ -12,42 +12,77 @@
       rel="stylesheet"
     />
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
     <title>Spotify</title>
   </head>
   <body>
-    <!-- Top container -->
-    <div>
-      <!-- Side-bar nav -->
-      <nav>
-        <!-- Main menu -->
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-        <!-- Playlists section-->
+    <div class="shell">
+      <!-- Top container -->
+      <div class="top-container">
+        <!-- Side-bar nav -->
+        <nav class="side_bar">
+          <!-- Main menu -->
+          <ul class="nav_top">
+            <li>
+              <a href="#">
+                <img
+                  src="img/logo-small.svg"
+                  alt="Spotify logo"
+                  class="logo_small"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="img/logo.svg" alt="Spotify logo" class="logo" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/home.svg" alt="Home icon" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/search.svg" alt="Search icon" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/libreria.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+          <!-- Playlists section-->
+          <div class="nav_center"></div>
+          <!-- Profile section -->
+          <ul class="nav_bottom">
+            <li>
+              <a href="#">
+                <img src="img/download.svg" alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/profile.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Main container -->
+        <div class="main_container"></div>
+      </div>
+      <!-- Control bar -->
+      <div class="control_bar_container">
+        <!-- Current song -->
         <div></div>
-        <!-- User section -->
-        <ul>
-          <li><a href="#"></a></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </nav>
-      <!-- Main container -->
-      <div></div>
-    </div>
-    <!-- Control bar -->
-    <div>
-      <!-- Current song -->
-      <div></div>
-      <!-- Play controls -->
-      <div></div>
-      <!-- Sound options -->
-      <div></div>
+        <!-- Play controls -->
+        <div></div>
+        <!-- Sound options -->
+        <div></div>
+      </div>
     </div>
   </body>
 </html>
