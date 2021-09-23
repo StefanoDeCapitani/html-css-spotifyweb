@@ -161,6 +161,17 @@ body {
 
 .main_icon_nav.active {
   color: white;
+  position: relative;
+}
+
+.main_icon_nav.active::before {
+  content: "";
+  height: 30px;
+  width: 3px;
+  background-color: var(--clr-accent);
+  position: absolute;
+  bottom: 0;
+  left: -20px;
 }
 
 .main_icon_nav:hover img,
@@ -170,21 +181,36 @@ body {
 }
 /*Center - Playlists*/
 
-.nav_center {
+.playlist_list {
   overflow: auto;
 }
 
 .nav_center h2 {
   color: white;
-  margin: 10px 0;
 }
 
-.nav_center a {
+.nav_center > * {
   padding: 10px 0;
 }
 
-.nav_center li:hover i {
+.nav_center div:hover i {
   background: white;
+}
+
+.nav_center div:hover {
+  color: white;
+}
+
+.playlist_list {
+  width: 100%;
+}
+
+.playlist_list a {
+  padding: 10px 0;
+}
+
+.playlist_list a:hover {
+  color: white;
 }
 
 .create_playlist a,
@@ -231,7 +257,6 @@ body {
 
 /*top overlay*/
 .top_overlay {
-  position: sticky;
   height: 90px;
   padding: 20px;
   text-align: right;
