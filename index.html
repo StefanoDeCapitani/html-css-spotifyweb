@@ -29,11 +29,11 @@
       <!-- Top container -->
       <div class="top-container">
         <!-- Side-bar nav -->
-        <nav class="side_bar">
+        <nav class="side_bar mobile-hidden">
           <!-- Main menu -->
           <ul class="nav_top">
             <li>
-              <a href="#" tabindex="0">
+              <a href="#">
                 <img
                   src="img/logo-small.svg"
                   alt="Spotify logo"
@@ -53,13 +53,13 @@
               </a>
             </li>
             <li>
-              <a href="#" class="main_icon_nav" tabindex="0">
+              <a href="#" class="main_icon_nav">
                 <img src="img/search.svg" alt="Search icon" />
                 <span class="xs-hidden"><h3>Cerca</h3></span>
               </a>
             </li>
             <li>
-              <a href="#" class="main_icon_nav" tabindex="0">
+              <a href="#" class="main_icon_nav">
                 <img src="img/libreria.svg" alt="" />
                 <span class="xs-hidden"><h3>La tua libreria</h3></span>
               </a>
@@ -133,13 +133,13 @@
         </nav>
         <!-- Main container -->
         <div class="main_container">
-          <div class="top_overlay">
+          <div class="top_overlay mobile-hidden">
             <a href="#" class="btn-transparent upgrade_button"
               >EFFETTUA L'UPGRADE</a
             >
           </div>
           <div class="page_scroll">
-            <nav class="list-small-underline-accent">
+            <nav class="list-small-underline-accent mobile-hidden">
               <ul>
                 <li>
                   <h2>
@@ -174,7 +174,15 @@
               </ul>
             </nav>
             <section class="recently_played">
-              <h1>Recently played</h1>
+              <h1 class="mobile-hidden">Recently played</h1>
+              <div class="mobile-visible good_morning">
+                <h1>Buongiorno</h1>
+                <span class="settings gray-text">
+                  <i class="far fa-bell"></i>
+                  <i class="fas fa-history"></i>
+                  <i class="fas fa-cog"></i>
+                </span>
+              </div>
               <div class="card_row">
                 <div class="card album">
                   <div class="card_image">
@@ -278,7 +286,7 @@
       <!-- Control bar -->
       <div class="control_bar_container">
         <!-- Current song -->
-        <div class="current_song">
+        <div class="mobile-hidden current_song">
           <a href="#">
             <img src="img/sinister.jpeg" alt="Sinister cover" />
           </a>
@@ -296,7 +304,7 @@
           </div>
         </div>
         <!-- Player controls -->
-        <div class="player">
+        <div class="mobile-hidden player">
           <div class="controls">
             <i class="fas fa-random"></i>
             <i class="fas fa-step-backward"></i>
@@ -315,7 +323,7 @@
           </div>
         </div>
         <!-- Sound controls -->
-        <div class="sound_controls">
+        <div class="sound_controls mobile-hidden">
           <i class="fas fa-list"></i>
           <i class="fas fa-desktop"></i>
           <i class="fas fa-volume-up"></i>
@@ -325,6 +333,59 @@
             </div>
           </div>
         </div>
+        <div class="song_player mobile-visible landscape-hidden">
+          <img src="img/sinister.jpeg" alt="Sinister cover" />
+          <div class="mobile_song_and_author">
+            <a href="#">
+              <h3>Sinister</h3>
+            </a>
+            <h6 class="gray-text">Brano Nome</h6>
+          </div>
+          <div class="mobile_folder_icons">
+            <i class="fas fa-desktop gray-text"></i>
+            <i class="far fa-heart"></i>
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="song_player landscape">
+          <div class="current_song">
+            <img src="img/sinister.jpeg" alt="Sinister cover" />
+            <div class="mobile_song_and_author">
+              <a href="#">
+                <h3>Sinister</h3>
+              </a>
+              <h6 class="gray-text">Brano Nome</h6>
+            </div>
+            <div class="mobile_folder_icons">
+              <i class="far fa-heart"></i>
+            </div>
+          </div>
+          <div class="mini_control_bar">
+            <i class="fas fa-desktop"></i>
+            <i class="fas fa-play-circle mini_play"></i>
+            <i class="fas fa-step-forward"></i>
+          </div>
+        </div>
+        <ul class="mobile_nav mobile-visible">
+          <li>
+            <a href="#">
+              <img src="img/home.svg" alt="Home icon" />
+              <span><h3>Home</h3></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/search.svg" alt="Search icon" />
+              <span><h3>Cerca</h3></span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="img/libreria.svg" alt="" />
+              <span><h3>La tua libreria</h3></span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </body>
