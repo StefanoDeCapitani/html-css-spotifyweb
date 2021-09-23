@@ -31,7 +31,7 @@ D: UTILITY CLASSES
 TODO:
 X. Nascondere le cover piuttosto che farle scivolare sotto in versione md, s, xs. (Rimanere su una stessa riga)
 X. Nascondere call-to-action (Barra effettua upgrade) quando la finestra è chiusa in altezza
-3. Aggiungere animation / transition per gli elementi
+X. Aggiungere animation / transition per gli elementi
 4. rendere più responsive alcune parti ( es. il player/footer) (Nascondere elementi non essenziali in risoluzione < 500px) */
 
 /*------------ A: RESET ------------*/
@@ -55,7 +55,7 @@ li {
 }
 
 :root {
-  --clr-accent: #adff2f;
+  --clr-accent: #1bb954;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -180,19 +180,29 @@ body {
   color: white;
 }
 
-.main_icon_nav.active {
-  color: white;
+.main_icon_nav {
   position: relative;
 }
 
-.main_icon_nav.active::before {
+.main_icon_nav.active {
+  color: white;
+}
+
+.main_icon_nav::before {
   content: "";
   height: 30px;
   width: 3px;
-  background-color: var(--clr-accent);
   position: absolute;
   bottom: 0;
   left: -20px;
+}
+
+.main_icon_nav:hover::before {
+  background-color: #878787;
+}
+
+.main_icon_nav.active::before {
+  background-color: var(--clr-accent);
 }
 
 .main_icon_nav:hover img,
@@ -275,6 +285,11 @@ body {
 /*top overlay*/
 
 .top_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 200px;
+  z-index: 2;
   height: 90px;
   padding: 20px;
   text-align: right;
@@ -287,40 +302,41 @@ body {
 }
 
 .upgrade_button:hover {
-  transform: scale(1.1, 1.1);
-}
-
-/*nav*/
-
-.main_container nav ul {
-  text-align: center;
-  word-spacing: -10px;
-}
-
-.main_container nav li {
-  word-spacing: normal;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-
-.main_container nav a {
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 5px;
+  transform: scale(1.05, 1.05);
 }
 
 /*page scroll*/
 
 .page_scroll {
   height: 100%;
-  padding: 20px 20px 110px;
+  padding: 110px 20px 110px;
   overflow: auto;
 }
+
+/*nav*/
+
+.page_scroll nav ul {
+  text-align: center;
+  word-spacing: -10px;
+}
+
+.page_scroll nav li {
+  word-spacing: normal;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.page_scroll nav a {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+
+/*cards*/
 
 .card_row {
   margin: 20px 0;
   display: flex;
-  /*   flex-flow: row wrap; */
   gap: 15px;
   overflow: auto;
 }
@@ -338,6 +354,9 @@ body {
   width: calc(100% / 2 - 8px);
   text-align: center;
   cursor: pointer;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #181818;
 }
 
 .card_image {
@@ -346,6 +365,7 @@ body {
 
 .card img {
   width: 100%;
+  border-radius: 5px;
 }
 
 .card_image::before {
@@ -358,29 +378,34 @@ body {
 }
 
 .card_image::after {
-  content: "\f144";
+  content: "\f04b";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 0px;
+  right: 15px;
   color: white;
-  font-size: 50px;
+  height: 40px;
+  width: 40px;
+  padding-left: 3px;
+  background: #1bb954;
+  border-radius: 50%;
+  font-size: 15px;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
 }
 
-.card_image::before,
-.card_image::after {
-  transition: all 0.1s;
-}
-
-.card:hover .card_image::before {
-  background-color: #0000003d;
+.card:hover {
+  background-color: #282828;
 }
 
 .card:hover .card_image::after {
   opacity: 1;
+  bottom: 15px;
+  box-shadow: 0 5px 10px #1a1919be;
 }
 
 .card.artist img {
@@ -464,7 +489,7 @@ body {
 }
 
 .controls .play:hover i {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.2, 1.2);
 }
 
 .player .slider-container {
@@ -589,6 +614,10 @@ body {
     justify-content: center;
   }
 
+  .top_overlay {
+    left: 65px;
+  }
+
   .xs-hidden {
     display: none;
   }
@@ -641,8 +670,8 @@ body {
 /*M*/
 @media screen and (min-width: 768px) {
   .main_container {
-    min-width: unset;
-    max-width: unset;
+    min-width: revert;
+    max-width: revert;
   }
 
   .card {
