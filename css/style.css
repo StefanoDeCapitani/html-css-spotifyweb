@@ -25,8 +25,14 @@ D: UTILITY CLASSES
 - S
 - M
 - L
-
 ==========================================*/
+
+/* 
+TODO:
+X. Nascondere le cover piuttosto che farle scivolare sotto in versione md, s, xs. (Rimanere su una stessa riga)
+X. Nascondere call-to-action (Barra effettua upgrade) quando la finestra è chiusa in altezza
+3. Aggiungere animation / transition per gli elementi
+4. rendere più responsive alcune parti ( es. il player/footer) (Nascondere elementi non essenziali in risoluzione < 500px) */
 
 /*------------ A: RESET ------------*/
 
@@ -78,6 +84,7 @@ h6 {
 
 .gray-text {
   color: #878787;
+  transition: all 0.3s;
 }
 
 .gray-text.hover:hover {
@@ -155,11 +162,21 @@ body {
 .main_icon_nav img,
 .download_icon img {
   opacity: 0.7;
+  transition: all 0.2s;
+}
+.main_icon_nav,
+.nav_center li,
+.nav_bottom li,
+.nav_center div,
+.playlist_list a {
+  transition: all 0.2s;
 }
 
 .main_icon_nav:hover,
 .nav_center li:hover,
-.nav_bottom li:hover {
+.nav_bottom li:hover,
+.nav_center div:hover,
+.playlist_list a:hover {
   color: white;
 }
 
@@ -197,12 +214,12 @@ body {
   padding: 10px 0;
 }
 
-.nav_center div:hover i {
-  background: white;
+.nav_center div i {
+  transition: all 0.2s;
 }
 
-.nav_center div:hover {
-  color: white;
+.nav_center div:hover i {
+  background: white;
 }
 
 .playlist_list {
@@ -211,10 +228,6 @@ body {
 
 .playlist_list a {
   padding: 10px 0;
-}
-
-.playlist_list a:hover {
-  color: white;
 }
 
 .create_playlist a,
@@ -270,10 +283,11 @@ body {
 
 .upgrade_button {
   min-width: 217px;
+  transition: all 0.1s;
 }
 
 .upgrade_button:hover {
-  transform: scale(1.05, 1.05);
+  transform: scale(1.1, 1.1);
 }
 
 /*nav*/
@@ -306,8 +320,9 @@ body {
 .card_row {
   margin: 20px 0;
   display: flex;
-  flex-flow: row wrap;
+  /*   flex-flow: row wrap; */
   gap: 15px;
+  overflow: auto;
 }
 
 .page_scroll section h1 {
@@ -319,8 +334,10 @@ body {
 }
 
 .card {
+  flex: 0 0 auto;
   width: calc(100% / 2 - 8px);
   text-align: center;
+  cursor: pointer;
 }
 
 .card_image {
@@ -331,17 +348,16 @@ body {
   width: 100%;
 }
 
-.card:hover .card_image::before {
+.card_image::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0000003d;
 }
 
-.card:hover .card_image::after {
+.card_image::after {
   content: "\f144";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -351,6 +367,20 @@ body {
   transform: translate(-50%, -50%);
   color: white;
   font-size: 50px;
+  opacity: 0;
+}
+
+.card_image::before,
+.card_image::after {
+  transition: all 0.1s;
+}
+
+.card:hover .card_image::before {
+  background-color: #0000003d;
+}
+
+.card:hover .card_image::after {
+  opacity: 1;
 }
 
 .card.artist img {
@@ -371,7 +401,7 @@ body {
   color: white;
   background: #282828;
   flex: 0 0 100px;
-  max-height: 100px;
+  /*   max-height: 100px; */
   padding: 10px 15px;
   display: flex;
   align-items: center;
@@ -381,7 +411,7 @@ body {
 /*Left container - Current song*/
 
 .current_song {
-  flex: 1 1 150px;
+  flex: 1 1 120px;
   display: flex;
   gap: 10px;
 }
@@ -406,7 +436,7 @@ body {
 /*Center container - Player*/
 
 .player {
-  flex: 18 0 180px;
+  flex: 18 0 150px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -430,6 +460,7 @@ body {
 .controls .play i {
   font-size: 30px;
   padding: 0;
+  transition: all 0.1s;
 }
 
 .controls .play:hover i {
@@ -447,7 +478,7 @@ body {
 /*Right container - Sound controls*/
 
 .sound_controls {
-  flex: 1 1 150px;
+  flex: 1 1 110px;
   display: flex;
 }
 
@@ -515,13 +546,10 @@ body {
   width: 50%;
   border-radius: 2px;
   background-color: #c1c1c1;
+  transition: all 0.2s;
 }
 
-.slider-container:hover .progress {
-  background-color: var(--clr-accent);
-}
-
-.slider-container:hover .progress:after {
+.slider-container .progress:after {
   content: "";
   position: absolute;
   right: 0;
@@ -531,11 +559,27 @@ body {
   width: 15px;
   border-radius: 50%;
   background-color: white;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.slider-container:hover .progress {
+  background-color: var(--clr-accent);
+}
+
+.slider-container:hover .progress:after {
+  opacity: 1;
 }
 
 /*====================================
             MEDIA QUERIES
 ====================================*/
+
+@media screen and (max-height: 630px) {
+  .top_overlay {
+    display: none;
+  }
+}
 
 /*XS*/
 
@@ -548,11 +592,21 @@ body {
   .xs-hidden {
     display: none;
   }
+
+  .main_container {
+    min-width: 0;
+    max-width: calc(575px - 65px);
+  }
 }
 
 /*S*/
 
 @media screen and (min-width: 576px) {
+  .main_container {
+    min-width: calc(576px - 200px);
+    max-width: calc(768px - 200px);
+  }
+
   .side_bar {
     flex: 0 0 200px;
     align-items: flex-start;
@@ -586,7 +640,13 @@ body {
 
 /*M*/
 @media screen and (min-width: 768px) {
+  .main_container {
+    min-width: unset;
+    max-width: unset;
+  }
+
   .card {
+    flex: 0 0 auto;
     width: calc(100% / 4 - 12px);
   }
 
