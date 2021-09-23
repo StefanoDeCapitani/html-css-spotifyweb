@@ -20,6 +20,12 @@ C. LAYOUT
 D: UTILITY CLASSES
     - Custom slider
 
+======== MEDIA QUERIES ========
+- XS
+- S
+- M
+- L
+
 ==========================================*/
 
 /*------------ A: RESET ------------*/
@@ -254,6 +260,7 @@ body {
 }
 
 /*top overlay*/
+
 .top_overlay {
   height: 90px;
   padding: 20px;
@@ -365,7 +372,7 @@ body {
   background: #282828;
   flex: 0 0 100px;
   max-height: 100px;
-  padding: 10px 15px 25px;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   gap: 30px;
