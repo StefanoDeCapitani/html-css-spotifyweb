@@ -126,6 +126,10 @@ MEDIA QUERIES:
   .nav_bottom a img {
     margin-right: 10px;
   }
+
+  .top_overlay {
+    left: 200px;
+  }
 }
 
 /*M*/
@@ -373,7 +377,7 @@ MEDIA QUERIES:
 
 @media screen and (max-width: 499px) {
   .mobile-hidden,
-  .landscape {
+  .song_player.landscape {
     display: none;
   }
 
