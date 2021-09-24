@@ -61,19 +61,20 @@ li {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #adadad77;
+  background: #adadad;
   border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.808);
+  background: rgb(110, 110, 110);
   border-radius: 5px;
+  box-shadow: 0 0 0 1px inset #adadad;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(85, 85, 85, 0.767);
+  background: rgb(85, 85, 85);
 }
 
 /*------------ B: TYPOGRAPHY ------------*/
