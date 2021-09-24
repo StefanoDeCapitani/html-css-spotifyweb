@@ -47,6 +47,10 @@ Table of contents:
     max-width: unset;
   }
 
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
   /*---------------- TYPOGRAPHY ----------------*/
 
   h1 {
