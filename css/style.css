@@ -51,6 +51,32 @@ li {
   font-family: "Montserrat", sans-serif;
 }
 
+/*Scrollbar style*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #adadad77;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.808);
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px inset transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85, 0.767);
+}
+
 /*------------ B: TYPOGRAPHY ------------*/
 
 h1 {
