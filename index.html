@@ -141,6 +141,7 @@
             >
           </div>
           <div class="page_scroll">
+            <!-- Start side bar -->
             <nav class="list-small-underline-accent mobile-hidden">
               <ul>
                 <li>
@@ -175,6 +176,8 @@
                 </li>
               </ul>
             </nav>
+            <!-- End side bar -->
+            <!-- Start first Section -->
             <section class="recently_played">
               <h1 class="mobile-hidden">Recently played</h1>
               <div class="mobile-visible good_morning">
@@ -245,6 +248,8 @@
                 </div>
               </div>
             </section>
+            <!-- End first Section -->
+            <!-- Start second Section -->
             <section class="created_for_you">
               <h1>Creato per John Doe</h1>
               <div class="card_row">
@@ -260,8 +265,34 @@
                   </div>
                   <h2 class="card_heading">Daily Mix 1</h2>
                 </div>
+                <div class="card album">
+                  <div class="card_image">
+                    <img src="img/radar.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Release Radar</h2>
+                </div>
+                <div class="card album">
+                  <div class="card_image">
+                    <img src="img/mixdaily.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Daily Mix 1</h2>
+                </div>
+                <div class="card album">
+                  <div class="card_image">
+                    <img src="img/radar.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Release Radar</h2>
+                </div>
+                <div class="card album">
+                  <div class="card_image">
+                    <img src="img/mixdaily.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Daily Mix 1</h2>
+                </div>
               </div>
             </section>
+            <!-- End second Section -->
+            <!-- Start third Section -->
             <section class="popular_artists">
               <h1>Artisti più popolari</h1>
               <p class="gray-text">
@@ -280,14 +311,39 @@
                   </div>
                   <h2 class="card_heading">Einaudi</h2>
                 </div>
+                <div class="card artist">
+                  <div class="card_image">
+                    <img src="img/youg.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Lana del Rey</h2>
+                </div>
+                <div class="card artist">
+                  <div class="card_image">
+                    <img src="img/einaudi.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Einaudi</h2>
+                </div>
+                <div class="card artist">
+                  <div class="card_image">
+                    <img src="img/youg.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Lana del Rey</h2>
+                </div>
+                <div class="card artist">
+                  <div class="card_image">
+                    <img src="img/einaudi.jpeg" alt="" />
+                  </div>
+                  <h2 class="card_heading">Einaudi</h2>
+                </div>
               </div>
             </section>
+            <!-- End third Section -->
           </div>
         </div>
       </div>
       <!-- Control bar -->
       <div class="control_bar_container">
-        <!-- Current song -->
+        <!-- Desktop current song -->
         <div class="mobile-hidden current_song">
           <a href="#">
             <img src="img/sinister.jpeg" alt="Sinister cover" />
@@ -305,36 +361,7 @@
             <i class="far fa-folder gray-text hover"></i>
           </div>
         </div>
-        <!-- Player controls -->
-        <div class="mobile-hidden player">
-          <div class="controls">
-            <i class="fas fa-random"></i>
-            <i class="fas fa-step-backward"></i>
-            <div class="play">
-              <i class="far fa-play-circle"></i>
-            </div>
-            <i class="fas fa-step-forward"></i>
-            <i class="fas fa-redo-alt"></i>
-          </div>
-          <div class="slider-container small-text">
-            <span>0:25</span>
-            <div class="slider">
-              <div class="progress"></div>
-            </div>
-            <span>4:35</span>
-          </div>
-        </div>
-        <!-- Sound controls -->
-        <div class="sound_controls mobile-hidden">
-          <i class="fas fa-list"></i>
-          <i class="fas fa-desktop"></i>
-          <i class="fas fa-volume-up"></i>
-          <div class="slider-container">
-            <div class="slider">
-              <div class="progress"></div>
-            </div>
-          </div>
-        </div>
+        <!-- Mobile portrait song player -->
         <div class="song_player mobile-visible landscape-hidden">
           <img src="img/sinister.jpeg" alt="Sinister cover" />
           <div class="mobile_song_and_author">
@@ -349,6 +376,7 @@
             <i class="fas fa-play"></i>
           </div>
         </div>
+        <!-- Mobile landscape song player -->
         <div class="song_player landscape">
           <div class="current_song">
             <img src="img/sinister.jpeg" alt="Sinister cover" />
@@ -368,6 +396,37 @@
             <i class="fas fa-step-forward"></i>
           </div>
         </div>
+        <!-- Desktop player controls -->
+        <div class="mobile-hidden player">
+          <div class="controls">
+            <i class="fas fa-random"></i>
+            <i class="fas fa-step-backward"></i>
+            <div class="play">
+              <i class="far fa-play-circle"></i>
+            </div>
+            <i class="fas fa-step-forward"></i>
+            <i class="fas fa-redo-alt"></i>
+          </div>
+          <div class="slider-container small-text">
+            <span>0:25</span>
+            <div class="slider">
+              <div class="progress"></div>
+            </div>
+            <span>4:35</span>
+          </div>
+        </div>
+        <!-- Desktop sound controls -->
+        <div class="sound_controls mobile-hidden">
+          <i class="fas fa-list"></i>
+          <i class="fas fa-desktop"></i>
+          <i class="fas fa-volume-up"></i>
+          <div class="slider-container">
+            <div class="slider">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile nav -->
         <ul class="mobile_nav mobile-visible">
           <li>
             <a href="#">
