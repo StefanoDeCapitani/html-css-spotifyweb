@@ -1,0 +1,151 @@
+/*====================================
+     --- DESKTOP MEDIA QUERIES ---
+     
+Table of contents:
+- HIDE UPGRADE BUTTON on max-height: 630px
+- XS
+  - reset
+  - layout
+- S
+  - reset
+  - layout
+    >> MAIN CONTAINER
+      - Side bar
+- M
+- L
+
+====================================*/
+
+@media screen and (max-height: 630px) {
+  .top_overlay {
+    display: none;
+  }
+
+  .page_scroll {
+    padding-top: 20px;
+  }
+}
+
+/*>>>>>>>>>>>>>>
+       XS
+>>>>>>>>>>>>>>*/
+
+@media screen and (min-width: 500px) {
+  /*------------- RESET -------------*/
+  .mobile-visible,
+  .landscape {
+    display: none;
+  }
+
+  .xs-hidden {
+    display: none;
+  }
+
+  /*------------- LAYOUT -------------*/
+  .main_container {
+    min-width: 0;
+    max-width: calc(768px - 65px);
+  }
+
+  .top_overlay {
+    left: 65px;
+  }
+
+  .download_icon,
+  .side_bar li {
+    justify-content: center;
+  }
+}
+
+/*>>>>>>>>>>>>>>
+        S
+>>>>>>>>>>>>>>*/
+
+@media screen and (min-width: 768px) {
+  /*---------------- RESET ----------------*/
+  .xs-hidden {
+    display: unset;
+  }
+
+  /*---------------- LAYOUT ----------------*/
+
+  /* >> MAIN CONTAINER >> */
+
+  .main_container {
+    min-width: calc(768px - 200px);
+    max-width: calc(992px - 200px);
+  }
+
+  .top_overlay {
+    left: 200px;
+  }
+
+  /*side-bar*/
+  .side_bar {
+    flex: 0 0 200px;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .nav_top,
+  .nav_bottom {
+    width: 100%;
+  }
+
+  .nav_top li:first-child {
+    display: none;
+  }
+
+  .nav_top .logo {
+    width: 130px;
+    margin-bottom: 30px;
+  }
+
+  .download_icon {
+    justify-content: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid #878787;
+  }
+
+  .create_playlist a i,
+  .nav_bottom a img {
+    margin-right: 10px;
+  }
+}
+
+/*>>>>>>>>>>>>>>
+        M
+>>>>>>>>>>>>>>*/
+
+@media screen and (min-width: 992px) {
+  .main_container {
+    min-width: revert;
+    max-width: revert;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    width: calc(100% / 4 - 12px);
+  }
+
+  .like_folder_icons {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/*>>>>>>>>>>>>>>
+        L
+>>>>>>>>>>>>>>*/
+
+@media screen and (min-width: 1200px) {
+  .card {
+    width: calc(100% / 6 - 13px);
+  }
+
+  .main_container nav li {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

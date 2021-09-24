@@ -1,0 +1,389 @@
+/*====================================
+       --- MOBILE MEDIA QUERIES ---
+
+Table of contents:
+- MOBILE GENERAL
+  A: RESET
+  B: TYPOGRAPHY
+  C: LAYOUT
+     >> Main Container
+     >> Control Bar
+
+- MOBILE (LANDSCAPE)
+  A: RESET
+  C: LAYOUT
+    >> Main Container
+    >> Control Bar
+      - Mobile nav
+      - Current song landscape
+
+- MOBILE (PORTRAIT)
+  A: RESET
+  C: LAYOUT
+    >> Main Container
+    >> Control Bar
+      - Mobile nav
+      - Current song
+      
+====================================*/
+
+/* >>>>>>>>>>>>>>
+  MOBILE GENERAL
+ >>>>>>>>>>>>>> */
+
+@media screen and (max-width: 499px),
+  screen and (max-height: 500px) and (max-width: 767px) {
+  /*---------------- RESET ----------------*/
+  .mobile-hidden {
+    display: none;
+  }
+
+  .mobile-visible {
+    display: unset;
+  }
+
+  .main_container {
+    min-width: unset;
+    max-width: unset;
+  }
+
+  /*---------------- TYPOGRAPHY ----------------*/
+
+  h1 {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 10px;
+  }
+
+  /*---------------- LAYOUT ----------------*/
+
+  /* >> MAIN CONTAINER >> */
+  .page_scroll {
+    padding-top: 40px;
+  }
+
+  .good_morning {
+    display: flex;
+  }
+
+  .settings {
+    margin-left: auto;
+  }
+
+  .settings i {
+    padding: 0 5px;
+  }
+
+  .recently_played .card_row {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .card,
+  .card:hover {
+    background: transparent;
+  }
+
+  .card:hover .card_image::after {
+    display: none;
+  }
+
+  .recently_played .card {
+    display: flex;
+    height: 40px;
+    background-color: #282828;
+  }
+
+  .card {
+    width: calc(100% / 2.7);
+  }
+
+  .recently_played .card img {
+    height: 100%;
+    flex: 0 0 auto;
+    border-radius: 0;
+    width: unset;
+  }
+
+  .recently_played .card_heading {
+    position: relative;
+    max-height: 28px;
+    align-self: center;
+    overflow: hidden;
+  }
+
+  .recently_played .card_heading::after {
+    content: "\f141";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 7px;
+    color: white;
+    width: 56px;
+    height: 14px;
+    padding-left: 10px;
+    padding-top: 8px;
+    text-align: left;
+    position: absolute;
+    top: 11px;
+    right: 0;
+    background: rgb(40, 40, 40);
+    background: linear-gradient(
+      90deg,
+      rgba(40, 40, 40, 0) 0%,
+      rgba(40, 40, 40, 1) 19%
+    );
+  }
+
+  .recently_played .card_row .card h2 {
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .recently_played .card_row .card h4 {
+    display: none;
+  }
+
+  /* >> CONTROL BAR >> */
+
+  /*Mobile nav*/
+  .mobile_nav {
+    width: 100%;
+  }
+
+  .mobile_nav img {
+    width: 20px;
+  }
+
+  .song_player img {
+    width: 40px;
+  }
+}
+
+/* >>>>>>>>>>>>>>
+MOBILE LANDSCAPE
+>>>>>>>>>>>>>> */
+
+@media screen and (max-height: 500px) and (max-width: 767px) {
+  /*-------------- RESET --------------*/
+  .landscape-hidden {
+    display: none;
+  }
+
+  .landscape {
+    display: unset;
+  }
+
+  /*-------------- LAYOUT --------------*/
+
+  .shell {
+    flex-direction: row-reverse;
+  }
+
+  /* >> MAIN CONTAINER >> */
+  .page_scroll {
+    padding-bottom: 40px;
+  }
+
+  .recently_played .card {
+    width: calc(100% / 3 - 10px);
+  }
+
+  .recently_played .card_heading {
+    margin: 5px 10px 5px 10px;
+  }
+
+  /* >> CONTROL BAR >> */
+  .control_bar_container {
+    padding-left: 0;
+    padding-right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 0 0 150px;
+    background: rgb(24, 24, 24);
+  }
+
+  /*Mobile nav*/
+  .mobile_nav {
+    order: -1;
+    padding: 0 10px;
+  }
+
+  .mobile_nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  .mobile_nav h3 {
+    font-weight: 500;
+  }
+
+  .song_player {
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+  }
+
+  /*Current song landscape*/
+  .current_song {
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .current_song h6 {
+    font-size: 8px;
+    font-weight: 300;
+  }
+
+  .current_song::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background: #8a8a8ac2;
+  }
+
+  .current_song::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 60%;
+    background: white;
+  }
+
+  .mini_control_bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .mini_control_bar i {
+    font-size: 13px;
+  }
+
+  .mini_control_bar .mini_play {
+    font-size: 30px;
+  }
+}
+
+/* >>>>>>>>>>>>>>
+MOBILE PORTRAIT
+>>>>>>>>>>>>>> */
+
+@media screen and (max-width: 499px) {
+  /*----------------- RESET -----------------*/
+  .song_player.landscape {
+    display: none;
+  }
+
+  /*----------------- LAYOUT -----------------*/
+  .shell {
+    flex-direction: column;
+  }
+
+  /* >> MAIN CONTAINER >> */
+  .recently_played .card img {
+    height: 100%;
+  }
+
+  .recently_played .card_heading {
+    margin: 5px 10px;
+  }
+
+  .recently_played .card {
+    width: calc(100% / 2 - 8px);
+  }
+
+  /* >> CONTROL BAR >> */
+
+  .control_bar_container {
+    flex: 0 0 60px;
+    padding: 8px 10px;
+    position: relative;
+  }
+
+  /*Mobile nav*/
+
+  .mobile_nav {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .mobile_nav a {
+    display: block;
+    width: 60px;
+    text-align: center;
+  }
+
+  .mobile_nav h3 {
+    font-size: 8px;
+    font-weight: 300;
+  }
+
+  .mobile_nav img {
+    height: 30px;
+  }
+
+  /*Song player*/
+  .song_player {
+    position: absolute;
+    top: -70px;
+    left: 5%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    height: 100%;
+    background: #4e4e4e;
+    padding: 5px 15px 5px 5px;
+    border-radius: 4px;
+  }
+
+  .song_player::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    right: 4px;
+    height: 3px;
+    background: #8a8a8ac2;
+  }
+
+  .song_player::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 4px;
+    height: 3px;
+    width: 40%;
+    background: white;
+  }
+
+  .mobile_folder_icons {
+    margin-left: auto;
+  }
+
+  .mobile_folder_icons i {
+    padding: 0 5px;
+  }
+
+  .song_player img {
+    border-radius: 3px;
+  }
+
+  .song_player h6 {
+    font-weight: 600;
+    color: #b3b3b3;
+  }
+}
