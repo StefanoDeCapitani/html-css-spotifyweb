@@ -69,7 +69,6 @@ li {
 ::-webkit-scrollbar-thumb {
   background: rgba(136, 136, 136, 0.808);
   border-radius: 5px;
-  box-shadow: 0 0 0 1px inset transparent;
 }
 
 /* Handle on hover */
